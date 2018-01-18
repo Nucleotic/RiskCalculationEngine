@@ -1,0 +1,12 @@
+E:\Dev\Git\CalculationEngine\src\App\Common\iSixty.Common\bin\Debug\Nucleotic.Common.dll
+E:\Dev\Git\CalculationEngine\src\App\Common\iSixty.Common\bin\Debug\Nucleotic.Common.pdb
+E:\Dev\Git\CalculationEngine\src\App\Common\iSixty.Common\bin\Debug\BouncyCastle.Crypto.dll
+E:\Dev\Git\CalculationEngine\src\App\Common\iSixty.Common\obj\Debug\Nucleotic.Common.csprojResolveAssemblyReference.cache
+E:\Dev\Git\CalculationEngine\src\App\Common\iSixty.Common\obj\Debug\Nucleotic.Common.dll
+E:\Dev\Git\CalculationEngine\src\App\Common\iSixty.Common\obj\Debug\Nucleotic.Common.pdb
+E:\Dev\Git\CalculationEngine\src\App\Common\Nucleotic.Common\bin\Debug\Nucleotic.Common.dll
+E:\Dev\Git\CalculationEngine\src\App\Common\Nucleotic.Common\bin\Debug\Nucleotic.Common.pdb
+E:\Dev\Git\CalculationEngine\src\App\Common\Nucleotic.Common\bin\Debug\BouncyCastle.Crypto.dll
+E:\Dev\Git\CalculationEngine\src\App\Common\Nucleotic.Common\obj\Debug\Nucleotic.Common.csprojResolveAssemblyReference.cache
+E:\Dev\Git\CalculationEngine\src\App\Common\Nucleotic.Common\obj\Debug\Nucleotic.Common.dll
+E:\Dev\Git\CalculationEngine\src\App\Common\Nucleotic.Common\obj\Debug\Nucleotic.Common.pdb

@@ -1,0 +1,79 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 14
+VisualStudioVersion = 14.0.25420.1
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Tests", "Tests", "{4F805006-D2EC-4386-B985-0B4434695F14}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Modules", "Modules", "{0ED992B8-9D71-4C91-9556-B06CDFB5F236}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Contracts", "Contracts", "{A1C0D44B-A98E-4864-9D52-BF0EC1E70352}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Clients", "Clients", "{E14461D0-1CB0-4171-B753-4D6EBC24D7C5}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Framework", "Framework", "{EEE0F53D-8377-407B-8D9E-4B22EB2A8EB3}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Common", "Common", "{4E040BD0-169D-4A68-8EC1-A411AC1602C8}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Nucleotic.CalculationEngine.WebApi", "Clients\Nucleotic.CalculationEngine.WebApi\Nucleotic.CalculationEngine.WebApi.csproj", "{F04F7875-376B-4B66-A84C-24D722B381D0}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Nucleotic.Common", "Common\Nucleotic.Common\Nucleotic.Common.csproj", "{37F84EE4-3BC8-41A9-8CA3-EB9A04C910B8}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Nucleotic.DataContracts.CalculationEngine", "DataContracts\Nucleotic.DataContracts.CalculationEngine\Nucleotic.DataContracts.CalculationEngine.csproj", "{BC62EBCE-E177-49A4-9865-AC7DA1D18CBB}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Nucleotic.Framework.Engine", "Framework\Nucleotic.Framework.Engine\Nucleotic.Framework.Engine.csproj", "{C7CFF5B0-8D7A-45EF-983E-722B14148045}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Nucleotic.Framework.Logging", "Framework\Nucleotic.Framework.Logging\Nucleotic.Framework.Logging.csproj", "{B6A3F064-D33C-40D2-AEF5-5E7581BB8D5E}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Nucleotic.Module.CalculationEngine", "Modules\Nucleotic.Module.CalculationEngine\Nucleotic.Module.CalculationEngine.csproj", "{B62B52B7-13AA-4516-9E0E-1FCC5BAD0331}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Nucleotic.Tests.CalculationEngine", "Tests\Nucleotic.Tests.CalculationEngine\Nucleotic.Tests.CalculationEngine.csproj", "{48402CC8-ACF5-4C36-A6FE-D421D4C613F0}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{F04F7875-376B-4B66-A84C-24D722B381D0}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F04F7875-376B-4B66-A84C-24D722B381D0}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F04F7875-376B-4B66-A84C-24D722B381D0}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F04F7875-376B-4B66-A84C-24D722B381D0}.Release|Any CPU.Build.0 = Release|Any CPU
+		{37F84EE4-3BC8-41A9-8CA3-EB9A04C910B8}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{37F84EE4-3BC8-41A9-8CA3-EB9A04C910B8}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{37F84EE4-3BC8-41A9-8CA3-EB9A04C910B8}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{37F84EE4-3BC8-41A9-8CA3-EB9A04C910B8}.Release|Any CPU.Build.0 = Release|Any CPU
+		{BC62EBCE-E177-49A4-9865-AC7DA1D18CBB}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{BC62EBCE-E177-49A4-9865-AC7DA1D18CBB}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{BC62EBCE-E177-49A4-9865-AC7DA1D18CBB}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{BC62EBCE-E177-49A4-9865-AC7DA1D18CBB}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C7CFF5B0-8D7A-45EF-983E-722B14148045}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C7CFF5B0-8D7A-45EF-983E-722B14148045}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C7CFF5B0-8D7A-45EF-983E-722B14148045}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C7CFF5B0-8D7A-45EF-983E-722B14148045}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B6A3F064-D33C-40D2-AEF5-5E7581BB8D5E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B6A3F064-D33C-40D2-AEF5-5E7581BB8D5E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B6A3F064-D33C-40D2-AEF5-5E7581BB8D5E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B6A3F064-D33C-40D2-AEF5-5E7581BB8D5E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B62B52B7-13AA-4516-9E0E-1FCC5BAD0331}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B62B52B7-13AA-4516-9E0E-1FCC5BAD0331}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B62B52B7-13AA-4516-9E0E-1FCC5BAD0331}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B62B52B7-13AA-4516-9E0E-1FCC5BAD0331}.Release|Any CPU.Build.0 = Release|Any CPU
+		{48402CC8-ACF5-4C36-A6FE-D421D4C613F0}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{48402CC8-ACF5-4C36-A6FE-D421D4C613F0}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{48402CC8-ACF5-4C36-A6FE-D421D4C613F0}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{48402CC8-ACF5-4C36-A6FE-D421D4C613F0}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{F04F7875-376B-4B66-A84C-24D722B381D0} = {E14461D0-1CB0-4171-B753-4D6EBC24D7C5}
+		{37F84EE4-3BC8-41A9-8CA3-EB9A04C910B8} = {4E040BD0-169D-4A68-8EC1-A411AC1602C8}
+		{BC62EBCE-E177-49A4-9865-AC7DA1D18CBB} = {A1C0D44B-A98E-4864-9D52-BF0EC1E70352}
+		{C7CFF5B0-8D7A-45EF-983E-722B14148045} = {EEE0F53D-8377-407B-8D9E-4B22EB2A8EB3}
+		{B6A3F064-D33C-40D2-AEF5-5E7581BB8D5E} = {EEE0F53D-8377-407B-8D9E-4B22EB2A8EB3}
+		{B62B52B7-13AA-4516-9E0E-1FCC5BAD0331} = {0ED992B8-9D71-4C91-9556-B06CDFB5F236}
+		{48402CC8-ACF5-4C36-A6FE-D421D4C613F0} = {4F805006-D2EC-4386-B985-0B4434695F14}
+	EndGlobalSection
+EndGlobal

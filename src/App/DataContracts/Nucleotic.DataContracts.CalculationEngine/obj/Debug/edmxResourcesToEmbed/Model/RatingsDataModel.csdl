@@ -1,0 +1,427 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="Nucleotic.DataContracts.CalculationEngine.RatingsModels" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+  <EntityContainer Name="EnginesEntities" annotation:LazyLoadingEnabled="true">
+    <EntitySet Name="BandValues" EntityType="Nucleotic.DataContracts.CalculationEngine.RatingsModels.BandValue" />
+    <EntitySet Name="BrokerLoadings" EntityType="Nucleotic.DataContracts.CalculationEngine.RatingsModels.BrokerLoading" />
+    <EntitySet Name="ClaimsHistoryLoadings" EntityType="Nucleotic.DataContracts.CalculationEngine.RatingsModels.ClaimsHistoryLoading" />
+    <EntitySet Name="CrestaZones" EntityType="Nucleotic.DataContracts.CalculationEngine.RatingsModels.CrestaZone" />
+    <EntitySet Name="EngineConfigurations" EntityType="Nucleotic.DataContracts.CalculationEngine.RatingsModels.EngineConfiguration" />
+    <EntitySet Name="PolicyRuleConfigurations" EntityType="Nucleotic.DataContracts.CalculationEngine.RatingsModels.PolicyRuleConfiguration" />
+    <EntitySet Name="RuleTypes" EntityType="Nucleotic.DataContracts.CalculationEngine.RatingsModels.RuleType" />
+    <EntitySet Name="RuleTypeAttributes" EntityType="Nucleotic.DataContracts.CalculationEngine.RatingsModels.RuleTypeAttribute" />
+    <EntitySet Name="RuleTypeExtensions" EntityType="Nucleotic.DataContracts.CalculationEngine.RatingsModels.RuleTypeExtension" />
+    <EntitySet Name="VehicleLoadings" EntityType="Nucleotic.DataContracts.CalculationEngine.RatingsModels.VehicleLoading" />
+    <AssociationSet Name="FK_BandValues_RuleType" Association="Nucleotic.DataContracts.CalculationEngine.RatingsModels.FK_BandValues_RuleType">
+      <End Role="RuleType" EntitySet="RuleTypes" />
+      <End Role="BandValue" EntitySet="BandValues" />
+    </AssociationSet>
+    <AssociationSet Name="FK_BandValuesExtension_RuleType" Association="Nucleotic.DataContracts.CalculationEngine.RatingsModels.FK_BandValuesExtension_RuleType">
+      <End Role="RuleType" EntitySet="RuleTypes" />
+      <End Role="RuleTypeExtension" EntitySet="RuleTypeExtensions" />
+    </AssociationSet>
+    <AssociationSet Name="FK_RuleTypeAttributes_RuleType" Association="Nucleotic.DataContracts.CalculationEngine.RatingsModels.FK_RuleTypeAttributes_RuleType">
+      <End Role="RuleType" EntitySet="RuleTypes" />
+      <End Role="RuleTypeAttribute" EntitySet="RuleTypeAttributes" />
+    </AssociationSet>
+    <EntitySet Name="PolicyRuleLoadings" EntityType="Nucleotic.DataContracts.CalculationEngine.RatingsModels.PolicyRuleLoading" />
+    <AssociationSet Name="FK_PolicyRuleLoadings_PolicyRuleConfiguration" Association="Nucleotic.DataContracts.CalculationEngine.RatingsModels.FK_PolicyRuleLoadings_PolicyRuleConfiguration">
+      <End Role="PolicyRuleConfiguration" EntitySet="PolicyRuleConfigurations" />
+      <End Role="PolicyRuleLoading" EntitySet="PolicyRuleLoadings" />
+    </AssociationSet>
+    <EntitySet Name="UnderwritingExclusions" EntityType="Nucleotic.DataContracts.CalculationEngine.RatingsModels.UnderwritingExclusion" />
+    <AssociationSet Name="FK_UnderwritingExceptions_RuleType1" Association="Nucleotic.DataContracts.CalculationEngine.RatingsModels.FK_UnderwritingExceptions_RuleType1">
+      <End Role="RuleType" EntitySet="RuleTypes" />
+      <End Role="UnderwritingExclusion" EntitySet="UnderwritingExclusions" />
+    </AssociationSet>
+    <AssociationSet Name="FK_ClaimsHistoryLoadings_RuleType" Association="Nucleotic.DataContracts.CalculationEngine.RatingsModels.FK_ClaimsHistoryLoadings_RuleType">
+      <End Role="RuleType" EntitySet="RuleTypes" />
+      <End Role="ClaimsHistoryLoading" EntitySet="ClaimsHistoryLoadings" />
+    </AssociationSet>
+    <AssociationSet Name="FK_RuleType_EngineConfiguration" Association="Nucleotic.DataContracts.CalculationEngine.RatingsModels.FK_RuleType_EngineConfiguration">
+      <End Role="EngineConfiguration" EntitySet="EngineConfigurations" />
+      <End Role="RuleType" EntitySet="RuleTypes" />
+    </AssociationSet>
+    <EntitySet Name="PolicyRuleParameters" EntityType="Nucleotic.DataContracts.CalculationEngine.RatingsModels.PolicyRuleParameter" />
+    <AssociationSet Name="FK_PolicyRuleParameters_PolicyRuleConfiguration" Association="Nucleotic.DataContracts.CalculationEngine.RatingsModels.FK_PolicyRuleParameters_PolicyRuleConfiguration">
+      <End Role="PolicyRuleConfiguration" EntitySet="PolicyRuleConfigurations" />
+      <End Role="PolicyRuleParameter" EntitySet="PolicyRuleParameters" />
+    </AssociationSet>
+    <AssociationSet Name="FK_BandValues_RuleTypeAttributes" Association="Nucleotic.DataContracts.CalculationEngine.RatingsModels.FK_BandValues_RuleTypeAttributes">
+      <End Role="RuleTypeAttribute" EntitySet="RuleTypeAttributes" />
+      <End Role="BandValue" EntitySet="BandValues" />
+    </AssociationSet>
+    <AssociationSet Name="FK_RuleTypeExtension_RuleTypeAttributes" Association="Nucleotic.DataContracts.CalculationEngine.RatingsModels.FK_RuleTypeExtension_RuleTypeAttributes">
+      <End Role="RuleTypeAttribute" EntitySet="RuleTypeAttributes" />
+      <End Role="RuleTypeExtension" EntitySet="RuleTypeExtensions" />
+    </AssociationSet>
+    <AssociationSet Name="FK_RuleTypeExtension_RuleTypeExtension" Association="Nucleotic.DataContracts.CalculationEngine.RatingsModels.FK_RuleTypeExtension_RuleTypeExtension">
+      <End Role="RuleTypeExtension" EntitySet="RuleTypeExtensions" />
+      <End Role="RuleTypeExtension1" EntitySet="RuleTypeExtensions" />
+    </AssociationSet>
+    <AssociationSet Name="FK_BandValues_Extensions" Association="Nucleotic.DataContracts.CalculationEngine.RatingsModels.FK_BandValues_Extensions">
+      <End Role="RuleTypeExtension" EntitySet="RuleTypeExtensions" />
+      <End Role="BandValue" EntitySet="BandValues" />
+    </AssociationSet>
+    <AssociationSet Name="FK_UnderwritingExclusions_RuleTypeAttributes" Association="Nucleotic.DataContracts.CalculationEngine.RatingsModels.FK_UnderwritingExclusions_RuleTypeAttributes">
+      <End Role="RuleTypeAttribute" EntitySet="RuleTypeAttributes" />
+      <End Role="UnderwritingExclusion" EntitySet="UnderwritingExclusions" />
+    </AssociationSet>
+  </EntityContainer>
+  <EntityType Name="BandValue">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="RuleTypeId" Type="Int32" Nullable="false" />
+    <Property Name="BandMinValue" Type="Decimal" Nullable="false" Precision="15" Scale="5" />
+    <Property Name="BandMaxValue" Type="Decimal" Precision="15" Scale="5" />
+    <Property Name="LoadingRate" Type="Decimal" Nullable="false" Precision="12" Scale="4" />
+    <Property Name="Version" Type="Int32" Nullable="false" />
+    <NavigationProperty Name="RuleType" Relationship="Nucleotic.DataContracts.CalculationEngine.RatingsModels.FK_BandValues_RuleType" FromRole="BandValue" ToRole="RuleType" />
+    <Property Name="RuleAttributeId" Type="Int32" />
+    <NavigationProperty Name="RuleTypeAttribute" Relationship="Nucleotic.DataContracts.CalculationEngine.RatingsModels.FK_BandValues_RuleTypeAttributes" FromRole="BandValue" ToRole="RuleTypeAttribute" />
+    <Property Name="RuleExtensionId" Type="Int32" />
+    <NavigationProperty Name="RuleTypeExtension" Relationship="Nucleotic.DataContracts.CalculationEngine.RatingsModels.FK_BandValues_Extensions" FromRole="BandValue" ToRole="RuleTypeExtension" />
+  </EntityType>
+  <EntityType Name="BrokerLoading">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="BrokerId" Type="Int32" />
+    <Property Name="BrokerName" Type="String" Nullable="false" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="DateCreated" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="DateDeleted" Type="DateTime" Precision="3" />
+    <Property Name="IsLatest" Type="Boolean" Nullable="false" />
+    <Property Name="DiscretionaryDiscount" Type="Decimal" Precision="7" Scale="2" Nullable="false" />
+    <Property Name="LoadingRateMotor" Type="Decimal" Nullable="false" Precision="7" Scale="2" />
+    <Property Name="LoadingRateNonMotor" Type="Decimal" Nullable="false" Precision="7" Scale="2" />
+    <Property Name="IsActive" Type="Boolean" Nullable="false" />
+    <Property Name="IncreasePercentageMotor" Type="Decimal" Nullable="false" Precision="7" Scale="2" />
+    <Property Name="IncreasePercentageNonMotor" Type="Decimal" Nullable="false" Precision="7" Scale="2" />
+  </EntityType>
+  <EntityType Name="ClaimsHistoryLoading">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="ClaimPeriod" Type="Int32" Nullable="false" />
+    <Property Name="NumberOfClaims" Type="Int32" Nullable="false" />
+    <Property Name="LoadingRate" Type="Decimal" Nullable="false" Precision="7" Scale="2" />
+    <Property Name="Version" Type="Int32" Nullable="false" />
+    <Property Name="RuleTypeId" Type="Int32" />
+    <NavigationProperty Name="RuleType" Relationship="Nucleotic.DataContracts.CalculationEngine.RatingsModels.FK_ClaimsHistoryLoadings_RuleType" FromRole="ClaimsHistoryLoading" ToRole="RuleType" />
+  </EntityType>
+  <EntityType Name="CrestaZone">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="PostalCode" Type="String" Nullable="false" MaxLength="4" FixedLength="false" Unicode="false" />
+    <Property Name="ZoneNumber" Type="Int32" Nullable="false" />
+  </EntityType>
+  <EntityType Name="EngineConfiguration">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="RulesetVersion" Type="Int32" Nullable="false" />
+    <Property Name="DateCreated" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="BaseRate" Type="Decimal" Precision="7" Scale="2" />
+    <Property Name="IsActive" Type="Boolean" Nullable="false" />
+    <Property Name="EngineType" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+    <NavigationProperty Name="RuleTypes" Relationship="Nucleotic.DataContracts.CalculationEngine.RatingsModels.FK_RuleType_EngineConfiguration" FromRole="EngineConfiguration" ToRole="RuleType" />
+    <Property Name="ProductType" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+  </EntityType>
+  <EntityType Name="PolicyRuleConfiguration">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="PolicyNo" Type="String" Nullable="false" MaxLength="32" FixedLength="false" Unicode="false" />
+    <Property Name="RulesVersion" Type="Int32" Nullable="false" />
+    <Property Name="BaseRate" Type="Decimal" Precision="7" Scale="3" />
+    <Property Name="CallingContextId" Type="Guid" />
+    <Property Name="DateCalculated" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="RiskItemId" Type="Int64" Nullable="false" />
+    <Property Name="BasicSumInsured" Type="Decimal" Nullable="false" Precision="18" Scale="2" />
+    <Property Name="CalculatedMonthlyPremium" Type="Decimal" Precision="10" Scale="2" />
+    <NavigationProperty Name="PolicyRuleLoadings" Relationship="Nucleotic.DataContracts.CalculationEngine.RatingsModels.FK_PolicyRuleLoadings_PolicyRuleConfiguration" FromRole="PolicyRuleConfiguration" ToRole="PolicyRuleLoading" />
+    <Property Name="CalculatedRate" Type="Decimal" Precision="18" Scale="10" />
+    <Property Name="CalculatedAnnualPremium" Type="Decimal" Precision="18" Scale="2" />
+    <Property Name="RiskItemCoverType" Type="String" Nullable="false" MaxLength="30" FixedLength="false" Unicode="false" />
+    <Property Name="PostalCode" Type="String" MaxLength="5" FixedLength="false" Unicode="false" />
+    <Property Name="BrokerId" Type="Int32" Nullable="false" />
+    <Property Name="LoadedFactor" Type="Decimal" Precision="18" Scale="10" />
+    <Property Name="AdditionalExcess" Type="Decimal" Precision="7" Scale="3" />
+    <Property Name="DiscretionaryFloorAmount" Type="Decimal" Precision="10" Scale="2" />
+    <Property Name="ProductType" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+    <Property Name="DeclinedReferred" Type="Boolean" Nullable="false" />
+    <NavigationProperty Name="PolicyRuleParameters" Relationship="Nucleotic.DataContracts.CalculationEngine.RatingsModels.FK_PolicyRuleParameters_PolicyRuleConfiguration" FromRole="PolicyRuleConfiguration" ToRole="PolicyRuleParameter" />
+  </EntityType>
+  <EntityType Name="RuleType">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="RuleName" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="IsEnabled" Type="Boolean" Nullable="false" />
+    <Property Name="DateCreated" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="DateDeleted" Type="DateTime" Precision="3" />
+    <Property Name="EffectiveFrom" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="EffectiveTo" Type="DateTime" Precision="3" />
+    <Property Name="Version" Type="Int32" Nullable="false" />
+    <Property Name="CriteriaSource" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="CalculationType" Type="String" Nullable="false" MaxLength="30" FixedLength="false" Unicode="false" />
+    <NavigationProperty Name="BandValues" Relationship="Nucleotic.DataContracts.CalculationEngine.RatingsModels.FK_BandValues_RuleType" FromRole="RuleType" ToRole="BandValue" />
+    <NavigationProperty Name="RuleTypeExtensions" Relationship="Nucleotic.DataContracts.CalculationEngine.RatingsModels.FK_BandValuesExtension_RuleType" FromRole="RuleType" ToRole="RuleTypeExtension" />
+    <NavigationProperty Name="RuleTypeAttributes" Relationship="Nucleotic.DataContracts.CalculationEngine.RatingsModels.FK_RuleTypeAttributes_RuleType" FromRole="RuleType" ToRole="RuleTypeAttribute" />
+    <NavigationProperty Name="UnderwritingExclusions" Relationship="Nucleotic.DataContracts.CalculationEngine.RatingsModels.FK_UnderwritingExceptions_RuleType1" FromRole="RuleType" ToRole="UnderwritingExclusion" />
+    <Property Name="EngineConfigurationId" Type="Int32" />
+    <NavigationProperty Name="ClaimsHistoryLoadings" Relationship="Nucleotic.DataContracts.CalculationEngine.RatingsModels.FK_ClaimsHistoryLoadings_RuleType" FromRole="RuleType" ToRole="ClaimsHistoryLoading" />
+    <NavigationProperty Name="EngineConfiguration" Relationship="Nucleotic.DataContracts.CalculationEngine.RatingsModels.FK_RuleType_EngineConfiguration" FromRole="RuleType" ToRole="EngineConfiguration" />
+  </EntityType>
+  <EntityType Name="RuleTypeAttribute">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="RuleTypeId" Type="Int32" Nullable="false" />
+    <Property Name="DateCreated" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="EffectiveFrom" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="EffectiveTo" Type="DateTime" Precision="3" />
+    <Property Name="AttributeKey" Type="String" Nullable="false" MaxLength="200" FixedLength="false" Unicode="true" />
+    <Property Name="AttributeValue" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Version" Type="Int32" Nullable="false" />
+    <NavigationProperty Name="RuleType" Relationship="Nucleotic.DataContracts.CalculationEngine.RatingsModels.FK_RuleTypeAttributes_RuleType" FromRole="RuleTypeAttribute" ToRole="RuleType" />
+    <NavigationProperty Name="BandValues" Relationship="Nucleotic.DataContracts.CalculationEngine.RatingsModels.FK_BandValues_RuleTypeAttributes" FromRole="RuleTypeAttribute" ToRole="BandValue" />
+    <NavigationProperty Name="RuleTypeExtensions" Relationship="Nucleotic.DataContracts.CalculationEngine.RatingsModels.FK_RuleTypeExtension_RuleTypeAttributes" FromRole="RuleTypeAttribute" ToRole="RuleTypeExtension" />
+    <NavigationProperty Name="UnderwritingExclusions" Relationship="Nucleotic.DataContracts.CalculationEngine.RatingsModels.FK_UnderwritingExclusions_RuleTypeAttributes" FromRole="RuleTypeAttribute" ToRole="UnderwritingExclusion" />
+  </EntityType>
+  <EntityType Name="RuleTypeExtension">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="RuleTypeId" Type="Int32" Nullable="false" />
+    <Property Name="Criteria" Type="String" Nullable="false" MaxLength="200" FixedLength="false" Unicode="false" />
+    <Property Name="CriteriaFactors" Type="Decimal" Precision="12" Scale="4" Nullable="false" />
+    <NavigationProperty Name="RuleType" Relationship="Nucleotic.DataContracts.CalculationEngine.RatingsModels.FK_BandValuesExtension_RuleType" FromRole="RuleTypeExtension" ToRole="RuleType" />
+    <Property Name="RuleAttributeId" Type="Int32" />
+    <NavigationProperty Name="RuleTypeAttribute" Relationship="Nucleotic.DataContracts.CalculationEngine.RatingsModels.FK_RuleTypeExtension_RuleTypeAttributes" FromRole="RuleTypeExtension" ToRole="RuleTypeAttribute" />
+    <NavigationProperty Name="RuleTypeExtension1" Relationship="Nucleotic.DataContracts.CalculationEngine.RatingsModels.FK_RuleTypeExtension_RuleTypeExtension" FromRole="RuleTypeExtension" ToRole="RuleTypeExtension1" />
+    <NavigationProperty Name="RuleTypeExtension2" Relationship="Nucleotic.DataContracts.CalculationEngine.RatingsModels.FK_RuleTypeExtension_RuleTypeExtension" FromRole="RuleTypeExtension1" ToRole="RuleTypeExtension" />
+    <NavigationProperty Name="BandValues" Relationship="Nucleotic.DataContracts.CalculationEngine.RatingsModels.FK_BandValues_Extensions" FromRole="RuleTypeExtension" ToRole="BandValue" />
+  </EntityType>
+  <EntityType Name="VehicleLoading">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="VehicleMake" Type="String" Nullable="false" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="VehicleModel" Type="String" Nullable="false" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="IsHighPerformance" Type="Boolean" />
+    <Property Name="LoadingRate" Type="Decimal" Nullable="false" Precision="7" Scale="2" />
+    <Property Name="DateCreated" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="DateDeleted" Type="DateTime" Precision="3" />
+    <Property Name="IsLatest" Type="Boolean" Nullable="false" />
+    <Property Name="WaiverRate" Type="Decimal" Precision="7" Scale="2" />
+    <Property Name="VehicleType" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+  </EntityType>
+  <Association Name="FK_BandValues_RuleType">
+    <End Type="Nucleotic.DataContracts.CalculationEngine.RatingsModels.RuleType" Role="RuleType" Multiplicity="1" />
+    <End Type="Nucleotic.DataContracts.CalculationEngine.RatingsModels.BandValue" Role="BandValue" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="RuleType">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="BandValue">
+        <PropertyRef Name="RuleTypeId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_BandValuesExtension_RuleType">
+    <End Type="Nucleotic.DataContracts.CalculationEngine.RatingsModels.RuleType" Role="RuleType" Multiplicity="1" />
+    <End Type="Nucleotic.DataContracts.CalculationEngine.RatingsModels.RuleTypeExtension" Role="RuleTypeExtension" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="RuleType">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="RuleTypeExtension">
+        <PropertyRef Name="RuleTypeId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_RuleTypeAttributes_RuleType">
+    <End Type="Nucleotic.DataContracts.CalculationEngine.RatingsModels.RuleType" Role="RuleType" Multiplicity="1" />
+    <End Type="Nucleotic.DataContracts.CalculationEngine.RatingsModels.RuleTypeAttribute" Role="RuleTypeAttribute" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="RuleType">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="RuleTypeAttribute">
+        <PropertyRef Name="RuleTypeId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityType Name="PolicyRuleLoading">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Guid" Nullable="false" />
+    <Property Name="PolicyRuleId" Type="Int32" Nullable="false" />
+    <Property Name="LoadingName" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="LoadingValue" Type="Decimal" Nullable="false" Precision="7" Scale="3" />
+    <Property Name="IsAggregable" Type="Boolean" Nullable="false" />
+    <NavigationProperty Name="PolicyRuleConfiguration" Relationship="Nucleotic.DataContracts.CalculationEngine.RatingsModels.FK_PolicyRuleLoadings_PolicyRuleConfiguration" FromRole="PolicyRuleLoading" ToRole="PolicyRuleConfiguration" />
+  </EntityType>
+  <Association Name="FK_PolicyRuleLoadings_PolicyRuleConfiguration">
+    <End Type="Nucleotic.DataContracts.CalculationEngine.RatingsModels.PolicyRuleConfiguration" Role="PolicyRuleConfiguration" Multiplicity="1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Type="Nucleotic.DataContracts.CalculationEngine.RatingsModels.PolicyRuleLoading" Role="PolicyRuleLoading" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="PolicyRuleConfiguration">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="PolicyRuleLoading">
+        <PropertyRef Name="PolicyRuleId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityType Name="UnderwritingExclusion">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="RuleTypeId" Type="Int32" Nullable="false" />
+    <Property Name="Version" Type="Int32" Nullable="false" />
+    <Property Name="MemberName" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="Operator" Type="String" Nullable="false" MaxLength="20" FixedLength="false" Unicode="false" />
+    <Property Name="ExclusionValue" Type="String" Nullable="false" MaxLength="20" FixedLength="false" Unicode="false" />
+    <Property Name="Reason" Type="String" MaxLength="300" FixedLength="false" Unicode="false" />
+    <NavigationProperty Name="RuleType" Relationship="Nucleotic.DataContracts.CalculationEngine.RatingsModels.FK_UnderwritingExceptions_RuleType1" FromRole="UnderwritingExclusion" ToRole="RuleType" />
+    <Property Name="RuleTypeAttributeId" Type="Int32" />
+    <NavigationProperty Name="RuleTypeAttribute" Relationship="Nucleotic.DataContracts.CalculationEngine.RatingsModels.FK_UnderwritingExclusions_RuleTypeAttributes" FromRole="UnderwritingExclusion" ToRole="RuleTypeAttribute" />
+  </EntityType>
+  <Association Name="FK_UnderwritingExceptions_RuleType1">
+    <End Type="Nucleotic.DataContracts.CalculationEngine.RatingsModels.RuleType" Role="RuleType" Multiplicity="1" />
+    <End Type="Nucleotic.DataContracts.CalculationEngine.RatingsModels.UnderwritingExclusion" Role="UnderwritingExclusion" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="RuleType">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="UnderwritingExclusion">
+        <PropertyRef Name="RuleTypeId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_ClaimsHistoryLoadings_RuleType">
+    <End Type="Nucleotic.DataContracts.CalculationEngine.RatingsModels.RuleType" Role="RuleType" Multiplicity="0..1" />
+    <End Type="Nucleotic.DataContracts.CalculationEngine.RatingsModels.ClaimsHistoryLoading" Role="ClaimsHistoryLoading" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="RuleType">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="ClaimsHistoryLoading">
+        <PropertyRef Name="RuleTypeId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_RuleType_EngineConfiguration">
+    <End Type="Nucleotic.DataContracts.CalculationEngine.RatingsModels.EngineConfiguration" Role="EngineConfiguration" Multiplicity="0..1" />
+    <End Type="Nucleotic.DataContracts.CalculationEngine.RatingsModels.RuleType" Role="RuleType" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="EngineConfiguration">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="RuleType">
+        <PropertyRef Name="EngineConfigurationId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityType Name="PolicyRuleParameter">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Guid" Nullable="false" />
+    <Property Name="PolicyRuleId" Type="Int32" Nullable="false" />
+    <Property Name="ParameterName" Type="String" Nullable="false" MaxLength="500" FixedLength="false" Unicode="false" />
+    <Property Name="ParameterValue" Type="String" MaxLength="1000" FixedLength="false" Unicode="false" />
+    <NavigationProperty Name="PolicyRuleConfiguration" Relationship="Nucleotic.DataContracts.CalculationEngine.RatingsModels.FK_PolicyRuleParameters_PolicyRuleConfiguration" FromRole="PolicyRuleParameter" ToRole="PolicyRuleConfiguration" />
+  </EntityType>
+  <Association Name="FK_PolicyRuleParameters_PolicyRuleConfiguration">
+    <End Type="Nucleotic.DataContracts.CalculationEngine.RatingsModels.PolicyRuleConfiguration" Role="PolicyRuleConfiguration" Multiplicity="1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Type="Nucleotic.DataContracts.CalculationEngine.RatingsModels.PolicyRuleParameter" Role="PolicyRuleParameter" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="PolicyRuleConfiguration">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="PolicyRuleParameter">
+        <PropertyRef Name="PolicyRuleId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_BandValues_RuleTypeAttributes">
+    <End Type="Nucleotic.DataContracts.CalculationEngine.RatingsModels.RuleTypeAttribute" Role="RuleTypeAttribute" Multiplicity="0..1" />
+    <End Type="Nucleotic.DataContracts.CalculationEngine.RatingsModels.BandValue" Role="BandValue" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="RuleTypeAttribute">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="BandValue">
+        <PropertyRef Name="RuleAttributeId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_RuleTypeExtension_RuleTypeAttributes">
+    <End Type="Nucleotic.DataContracts.CalculationEngine.RatingsModels.RuleTypeAttribute" Role="RuleTypeAttribute" Multiplicity="0..1" />
+    <End Type="Nucleotic.DataContracts.CalculationEngine.RatingsModels.RuleTypeExtension" Role="RuleTypeExtension" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="RuleTypeAttribute">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="RuleTypeExtension">
+        <PropertyRef Name="RuleAttributeId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_RuleTypeExtension_RuleTypeExtension">
+    <End Type="Nucleotic.DataContracts.CalculationEngine.RatingsModels.RuleTypeExtension" Role="RuleTypeExtension" Multiplicity="1" />
+    <End Type="Nucleotic.DataContracts.CalculationEngine.RatingsModels.RuleTypeExtension" Role="RuleTypeExtension1" Multiplicity="0..1" />
+    <ReferentialConstraint>
+      <Principal Role="RuleTypeExtension">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="RuleTypeExtension1">
+        <PropertyRef Name="Id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_BandValues_Extensions">
+    <End Type="Nucleotic.DataContracts.CalculationEngine.RatingsModels.RuleTypeExtension" Role="RuleTypeExtension" Multiplicity="0..1" />
+    <End Type="Nucleotic.DataContracts.CalculationEngine.RatingsModels.BandValue" Role="BandValue" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="RuleTypeExtension">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="BandValue">
+        <PropertyRef Name="RuleExtensionId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_UnderwritingExclusions_RuleTypeAttributes">
+    <End Type="Nucleotic.DataContracts.CalculationEngine.RatingsModels.RuleTypeAttribute" Role="RuleTypeAttribute" Multiplicity="0..1" />
+    <End Type="Nucleotic.DataContracts.CalculationEngine.RatingsModels.UnderwritingExclusion" Role="UnderwritingExclusion" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="RuleTypeAttribute">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="UnderwritingExclusion">
+        <PropertyRef Name="RuleTypeAttributeId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+</Schema>

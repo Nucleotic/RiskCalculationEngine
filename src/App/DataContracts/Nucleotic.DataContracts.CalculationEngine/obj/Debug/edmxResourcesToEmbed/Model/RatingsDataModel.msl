@@ -1,0 +1,189 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="NucleoticDataContractsCalculationEngineRatingsModelsStoreContainer" CdmEntityContainer="EnginesEntities">
+    <EntitySetMapping Name="BandValues">
+      <EntityTypeMapping TypeName="Nucleotic.DataContracts.CalculationEngine.RatingsModels.BandValue">
+        <MappingFragment StoreEntitySet="BandValues">
+          <ScalarProperty Name="RuleExtensionId" ColumnName="RuleExtensionId" />
+          <ScalarProperty Name="RuleAttributeId" ColumnName="RuleAttributeId" />
+          <ScalarProperty Name="Version" ColumnName="Version" />
+          <ScalarProperty Name="LoadingRate" ColumnName="LoadingRate" />
+          <ScalarProperty Name="BandMaxValue" ColumnName="BandMaxValue" />
+          <ScalarProperty Name="BandMinValue" ColumnName="BandMinValue" />
+          <ScalarProperty Name="RuleTypeId" ColumnName="RuleTypeId" />
+          <ScalarProperty Name="Id" ColumnName="Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="BrokerLoadings">
+      <EntityTypeMapping TypeName="Nucleotic.DataContracts.CalculationEngine.RatingsModels.BrokerLoading">
+        <MappingFragment StoreEntitySet="BrokerLoadings">
+          <ScalarProperty Name="IncreasePercentageNonMotor" ColumnName="IncreasePercentageNonMotor" />
+          <ScalarProperty Name="IncreasePercentageMotor" ColumnName="IncreasePercentageMotor" />
+          <ScalarProperty Name="IsActive" ColumnName="IsActive" />
+          <ScalarProperty Name="LoadingRateNonMotor" ColumnName="LoadingRateNonMotor" />
+          <ScalarProperty Name="LoadingRateMotor" ColumnName="LoadingRateMotor" />
+          <ScalarProperty Name="DiscretionaryDiscount" ColumnName="DiscretionaryDiscount" />
+          <ScalarProperty Name="IsLatest" ColumnName="IsLatest" />
+          <ScalarProperty Name="DateDeleted" ColumnName="DateDeleted" />
+          <ScalarProperty Name="DateCreated" ColumnName="DateCreated" />
+          <ScalarProperty Name="BrokerName" ColumnName="BrokerName" />
+          <ScalarProperty Name="BrokerId" ColumnName="BrokerId" />
+          <ScalarProperty Name="Id" ColumnName="Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="ClaimsHistoryLoadings">
+      <EntityTypeMapping TypeName="Nucleotic.DataContracts.CalculationEngine.RatingsModels.ClaimsHistoryLoading">
+        <MappingFragment StoreEntitySet="ClaimsHistoryLoadings">
+          <ScalarProperty Name="RuleTypeId" ColumnName="RuleTypeId" />
+          <ScalarProperty Name="Version" ColumnName="Version" />
+          <ScalarProperty Name="LoadingRate" ColumnName="LoadingRate" />
+          <ScalarProperty Name="NumberOfClaims" ColumnName="NumberOfClaims" />
+          <ScalarProperty Name="ClaimPeriod" ColumnName="ClaimPeriod" />
+          <ScalarProperty Name="Id" ColumnName="Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="CrestaZones">
+      <EntityTypeMapping TypeName="Nucleotic.DataContracts.CalculationEngine.RatingsModels.CrestaZone">
+        <MappingFragment StoreEntitySet="CrestaZones">
+          <ScalarProperty Name="ZoneNumber" ColumnName="ZoneNumber" />
+          <ScalarProperty Name="PostalCode" ColumnName="PostalCode" />
+          <ScalarProperty Name="Id" ColumnName="Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="EngineConfigurations">
+      <EntityTypeMapping TypeName="Nucleotic.DataContracts.CalculationEngine.RatingsModels.EngineConfiguration">
+        <MappingFragment StoreEntitySet="EngineConfiguration">
+          <ScalarProperty Name="ProductType" ColumnName="ProductType" />
+          <ScalarProperty Name="EngineType" ColumnName="EngineType" />
+          <ScalarProperty Name="IsActive" ColumnName="IsActive" />
+          <ScalarProperty Name="BaseRate" ColumnName="BaseRate" />
+          <ScalarProperty Name="DateCreated" ColumnName="DateCreated" />
+          <ScalarProperty Name="RulesetVersion" ColumnName="RulesetVersion" />
+          <ScalarProperty Name="Id" ColumnName="Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="PolicyRuleConfigurations">
+      <EntityTypeMapping TypeName="Nucleotic.DataContracts.CalculationEngine.RatingsModels.PolicyRuleConfiguration">
+        <MappingFragment StoreEntitySet="PolicyRuleConfiguration">
+          <ScalarProperty Name="DeclinedReferred" ColumnName="DeclinedReferred" />
+          <ScalarProperty Name="ProductType" ColumnName="ProductType" />
+          <ScalarProperty Name="DiscretionaryFloorAmount" ColumnName="DiscretionaryFloorAmount" />
+          <ScalarProperty Name="AdditionalExcess" ColumnName="AdditionalExcess" />
+          <ScalarProperty Name="LoadedFactor" ColumnName="LoadedFactor" />
+          <ScalarProperty Name="BrokerId" ColumnName="BrokerId" />
+          <ScalarProperty Name="PostalCode" ColumnName="PostalCode" />
+          <ScalarProperty Name="RiskItemCoverType" ColumnName="RiskItemCoverType" />
+          <ScalarProperty Name="CalculatedAnnualPremium" ColumnName="CalculatedAnnualPremium" />
+          <ScalarProperty Name="CalculatedRate" ColumnName="CalculatedRate" />
+          <ScalarProperty Name="CalculatedMonthlyPremium" ColumnName="CalculatedMonthlyPremium" />
+          <ScalarProperty Name="BasicSumInsured" ColumnName="BasicSumInsured" />
+          <ScalarProperty Name="RiskItemId" ColumnName="RiskItemId" />
+          <ScalarProperty Name="DateCalculated" ColumnName="DateCalculated" />
+          <ScalarProperty Name="CallingContextId" ColumnName="CallingContextId" />
+          <ScalarProperty Name="BaseRate" ColumnName="BaseRate" />
+          <ScalarProperty Name="RulesVersion" ColumnName="RulesVersion" />
+          <ScalarProperty Name="PolicyNo" ColumnName="PolicyNo" />
+          <ScalarProperty Name="Id" ColumnName="Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="RuleTypes">
+      <EntityTypeMapping TypeName="Nucleotic.DataContracts.CalculationEngine.RatingsModels.RuleType">
+        <MappingFragment StoreEntitySet="RuleType">
+          <ScalarProperty Name="EngineConfigurationId" ColumnName="EngineConfigurationId" />
+          <ScalarProperty Name="CalculationType" ColumnName="CalculationType" />
+          <ScalarProperty Name="CriteriaSource" ColumnName="CriteriaSource" />
+          <ScalarProperty Name="Version" ColumnName="Version" />
+          <ScalarProperty Name="EffectiveTo" ColumnName="EffectiveTo" />
+          <ScalarProperty Name="EffectiveFrom" ColumnName="EffectiveFrom" />
+          <ScalarProperty Name="DateDeleted" ColumnName="DateDeleted" />
+          <ScalarProperty Name="DateCreated" ColumnName="DateCreated" />
+          <ScalarProperty Name="IsEnabled" ColumnName="IsEnabled" />
+          <ScalarProperty Name="RuleName" ColumnName="RuleName" />
+          <ScalarProperty Name="Id" ColumnName="Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="RuleTypeAttributes">
+      <EntityTypeMapping TypeName="Nucleotic.DataContracts.CalculationEngine.RatingsModels.RuleTypeAttribute">
+        <MappingFragment StoreEntitySet="RuleTypeAttributes">
+          <ScalarProperty Name="Version" ColumnName="Version" />
+          <ScalarProperty Name="AttributeValue" ColumnName="AttributeValue" />
+          <ScalarProperty Name="AttributeKey" ColumnName="AttributeKey" />
+          <ScalarProperty Name="EffectiveTo" ColumnName="EffectiveTo" />
+          <ScalarProperty Name="EffectiveFrom" ColumnName="EffectiveFrom" />
+          <ScalarProperty Name="DateCreated" ColumnName="DateCreated" />
+          <ScalarProperty Name="RuleTypeId" ColumnName="RuleTypeId" />
+          <ScalarProperty Name="Id" ColumnName="Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="RuleTypeExtensions">
+      <EntityTypeMapping TypeName="Nucleotic.DataContracts.CalculationEngine.RatingsModels.RuleTypeExtension">
+        <MappingFragment StoreEntitySet="RuleTypeExtension">
+          <ScalarProperty Name="RuleAttributeId" ColumnName="RuleAttributeId" />
+          <ScalarProperty Name="CriteriaFactors" ColumnName="CriteriaFactors" />
+          <ScalarProperty Name="Criteria" ColumnName="Criteria" />
+          <ScalarProperty Name="RuleTypeId" ColumnName="RuleTypeId" />
+          <ScalarProperty Name="Id" ColumnName="Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="VehicleLoadings">
+      <EntityTypeMapping TypeName="Nucleotic.DataContracts.CalculationEngine.RatingsModels.VehicleLoading">
+        <MappingFragment StoreEntitySet="VehicleLoadings">
+          <ScalarProperty Name="VehicleType" ColumnName="VehicleType" />
+          <ScalarProperty Name="WaiverRate" ColumnName="WaiverRate" />
+          <ScalarProperty Name="IsLatest" ColumnName="IsLatest" />
+          <ScalarProperty Name="DateDeleted" ColumnName="DateDeleted" />
+          <ScalarProperty Name="DateCreated" ColumnName="DateCreated" />
+          <ScalarProperty Name="LoadingRate" ColumnName="LoadingRate" />
+          <ScalarProperty Name="IsHighPerformance" ColumnName="IsHighPerformance" />
+          <ScalarProperty Name="VehicleModel" ColumnName="VehicleModel" />
+          <ScalarProperty Name="VehicleMake" ColumnName="VehicleMake" />
+          <ScalarProperty Name="Id" ColumnName="Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="PolicyRuleLoadings">
+      <EntityTypeMapping TypeName="Nucleotic.DataContracts.CalculationEngine.RatingsModels.PolicyRuleLoading">
+        <MappingFragment StoreEntitySet="PolicyRuleLoadings">
+          <ScalarProperty Name="IsAggregable" ColumnName="IsAggregable" />
+          <ScalarProperty Name="LoadingValue" ColumnName="LoadingValue" />
+          <ScalarProperty Name="LoadingName" ColumnName="LoadingName" />
+          <ScalarProperty Name="PolicyRuleId" ColumnName="PolicyRuleId" />
+          <ScalarProperty Name="Id" ColumnName="Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="UnderwritingExclusions">
+      <EntityTypeMapping TypeName="Nucleotic.DataContracts.CalculationEngine.RatingsModels.UnderwritingExclusion">
+        <MappingFragment StoreEntitySet="UnderwritingExclusions">
+          <ScalarProperty Name="RuleTypeAttributeId" ColumnName="RuleTypeAttributeId" />
+          <ScalarProperty Name="Reason" ColumnName="Reason" />
+          <ScalarProperty Name="ExclusionValue" ColumnName="ExclusionValue" />
+          <ScalarProperty Name="Operator" ColumnName="Operator" />
+          <ScalarProperty Name="MemberName" ColumnName="MemberName" />
+          <ScalarProperty Name="Version" ColumnName="Version" />
+          <ScalarProperty Name="RuleTypeId" ColumnName="RuleTypeId" />
+          <ScalarProperty Name="Id" ColumnName="Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="PolicyRuleParameters">
+      <EntityTypeMapping TypeName="Nucleotic.DataContracts.CalculationEngine.RatingsModels.PolicyRuleParameter">
+        <MappingFragment StoreEntitySet="PolicyRuleParameters">
+          <ScalarProperty Name="ParameterValue" ColumnName="ParameterValue" />
+          <ScalarProperty Name="ParameterName" ColumnName="ParameterName" />
+          <ScalarProperty Name="PolicyRuleId" ColumnName="PolicyRuleId" />
+          <ScalarProperty Name="Id" ColumnName="Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>

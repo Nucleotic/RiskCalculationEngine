@@ -1,0 +1,14 @@
+E:\Dev\Git\CalculationEngine\src\App\Framework\iSixty.Framework.Engine\bin\Debug\NLog.config
+E:\Dev\Git\CalculationEngine\src\App\Framework\iSixty.Framework.Engine\bin\Debug\Nucleotic.Framework.Engine.dll
+E:\Dev\Git\CalculationEngine\src\App\Framework\iSixty.Framework.Engine\bin\Debug\Nucleotic.Framework.Engine.pdb
+E:\Dev\Git\CalculationEngine\src\App\Framework\iSixty.Framework.Engine\bin\Debug\Nucleotic.Framework.Logging.dll
+E:\Dev\Git\CalculationEngine\src\App\Framework\iSixty.Framework.Engine\bin\Debug\Common.Logging.Core.dll
+E:\Dev\Git\CalculationEngine\src\App\Framework\iSixty.Framework.Engine\bin\Debug\Common.Logging.dll
+E:\Dev\Git\CalculationEngine\src\App\Framework\iSixty.Framework.Engine\bin\Debug\Nucleotic.Framework.Logging.pdb
+E:\Dev\Git\CalculationEngine\src\App\Framework\iSixty.Framework.Engine\bin\Debug\Common.Logging.Core.pdb
+E:\Dev\Git\CalculationEngine\src\App\Framework\iSixty.Framework.Engine\bin\Debug\Common.Logging.Core.xml
+E:\Dev\Git\CalculationEngine\src\App\Framework\iSixty.Framework.Engine\bin\Debug\Common.Logging.pdb
+E:\Dev\Git\CalculationEngine\src\App\Framework\iSixty.Framework.Engine\bin\Debug\Common.Logging.xml
+E:\Dev\Git\CalculationEngine\src\App\Framework\iSixty.Framework.Engine\obj\Debug\Nucleotic.Framework.Engine.csprojResolveAssemblyReference.cache
+E:\Dev\Git\CalculationEngine\src\App\Framework\iSixty.Framework.Engine\obj\Debug\Nucleotic.Framework.Engine.dll
+E:\Dev\Git\CalculationEngine\src\App\Framework\iSixty.Framework.Engine\obj\Debug\Nucleotic.Framework.Engine.pdb

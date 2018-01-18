@@ -1,0 +1,158 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="14.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{B62B52B7-13AA-4516-9E0E-1FCC5BAD0331}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Nucleotic.Module.CalculationEngine</RootNamespace>
+    <AssemblyName>Nucleotic.Module.CalculationEngine</AssemblyName>
+    <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <TargetFrameworkProfile />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="KellermanSoftware.Compare-NET-Objects, Version=1.7.4.0, Culture=neutral, PublicKeyToken=d970ace04cc85217, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\CompareObjects.1.0.2\lib\net35\KellermanSoftware.Compare-NET-Objects.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Assemble\Command\Base\CreditCalculatorCommandBase.cs" />
+    <Compile Include="Assemble\Command\Base\ExcessWaiverCalculatorCommandBase.cs" />
+    <Compile Include="Assemble\Command\Configuration\AttributeValidationConfigurationCommand.cs" />
+    <Compile Include="Assemble\Command\Configuration\ExcessWaiversEngineConfigurationCommand.cs" />
+    <Compile Include="Assemble\Command\Configuration\LoadPolicyConfigurationCommand.cs" />
+    <Compile Include="Assemble\Command\Configuration\ExcessWaiversValidationConfigurationCommand.cs" />
+    <Compile Include="Assemble\Command\Configuration\PolicyValidationConfigurationCommand.cs" />
+    <Compile Include="Assemble\Command\RiskTypes\BuildingLoadingsCalculationCommand.cs" />
+    <Compile Include="Assemble\Command\Underwriting\AdditionalExcessWaiverCalculationCommand.cs" />
+    <Compile Include="Assemble\Command\Underwriting\ExcessBandLoadingCalculationCommand.cs" />
+    <Compile Include="Assemble\Command\Underwriting\ExcessWaiversCalculationCommand.cs" />
+    <Compile Include="Assemble\Command\Underwriting\FlatRateLoadingsCalculationCommand.cs" />
+    <Compile Include="Assemble\Command\Underwriting\ValidateWaiverExclusionsCommand.cs" />
+    <Compile Include="Assemble\Contexts\BaseContext.cs" />
+    <Compile Include="Assemble\Contexts\ExcessWaiverContext.cs" />
+    <Compile Include="Assemble\Pipeline\AllRiskLoadingsCalculationPipeline.cs" />
+    <Compile Include="Assemble\Pipeline\BuildingLoadingsCalculationPipeline.cs" />
+    <Compile Include="Assemble\Pipeline\ContentsLoadingsCalculationPipeline.cs" />
+    <Compile Include="Assemble\Pipeline\ExcessWaiverCalculationPipeline.cs" />
+    <Compile Include="Assemble\Pipeline\FlatRateLoadingsCalculationPipeline.cs" />
+    <Compile Include="Assemble\Pipeline\FlatRateLoadingsValidationPipeline.cs" />
+    <Compile Include="Assemble\Pipeline\WaiversValidationPipeline.cs" />
+    <Compile Include="Interfaces\IActivity.cs" />
+    <Compile Include="Interfaces\IActivityController.cs" />
+    <Compile Include="Interfaces\IActivityPipeline.cs" />
+    <Compile Include="Processor\CalculatorFactory\BaseVersion\Interfaces\IBuildingLoadingsCalculator.cs" />
+    <Compile Include="Processor\CalculatorFactory\BaseVersion\Interfaces\IExcessWaiverCalculator.cs" />
+    <Compile Include="Processor\CalculatorFactory\BaseVersion\Interfaces\IFlatRateLoadingsCalculator.cs" />
+    <Compile Include="Processor\CalculatorFactory\ExcessWaiversCalculatorFactory.cs" />
+    <Compile Include="Processor\CalculatorFactory\IExcessWaiverCalculatorFactory.cs" />
+    <Compile Include="Processor\CalculatorFactory\V1\Calculation\BuildingLoadingsFunctionSet.cs" />
+    <Compile Include="Processor\CalculatorFactory\V1\Calculation\ExcessWaiversFunctionSet.cs" />
+    <Compile Include="Processor\CalculatorFactory\V1\Calculation\FlatRateLoadingsFunctionSet.cs" />
+    <Compile Include="Processor\CalculatorFactory\V1\Common\BuildingLoadingsCalculator.cs" />
+    <Compile Include="Processor\CalculatorFactory\V1\Common\ExcessWaiversCalculator.cs" />
+    <Compile Include="Processor\CalculatorFactory\V1\Common\FlatRateLoadingsCalculator.cs" />
+    <Compile Include="Processor\ExtensionFactory\BaseFactory.cs" />
+    <Compile Include="Processor\ExtensionFactory\IExtensionFactory.cs" />
+    <Compile Include="Assemble\Command\Underwriting\LoadedFactorPremiumCalculationCommand.cs" />
+    <Compile Include="Assemble\Command\Underwriting\CoverTypeLoadingCommand.cs" />
+    <Compile Include="Assemble\Command\Underwriting\AgeBandLoadingCalculationCommand.cs" />
+    <Compile Include="Assemble\Command\Underwriting\BrokerLoadingCommand.cs" />
+    <Compile Include="Assemble\Command\Base\CalculatorCommandBase.cs" />
+    <Compile Include="Assemble\Command\Configuration\PolicyEntityConfigurationCommand.cs" />
+    <Compile Include="Assemble\Helpers\CommandHelpers.cs" />
+    <Compile Include="Assemble\Command\Configuration\LoadingsEngineConfigurationCommand.cs" />
+    <Compile Include="Assemble\Command\Underwriting\ClaimsLoadingCalculationCommand.cs" />
+    <Compile Include="Assemble\Command\Underwriting\BasePremiumRateCalculationCommand.cs" />
+    <Compile Include="Assemble\Command\Base\UnderwritingCalculatorCommandBase.cs" />
+    <Compile Include="Assemble\Command\Underwriting\CreditShortfallRateCommand.cs" />
+    <Compile Include="Assemble\Command\Underwriting\ValidateLoadingExclusionsCommand.cs" />
+    <Compile Include="Assemble\Command\Base\RepositoryCommandBase.cs" />
+    <Compile Include="Assemble\Command\Configuration\SavePolicyConfigurationCommand.cs" />
+    <Compile Include="Assemble\Command\RiskTypes\MotorLoadingsCalculationCommand.cs" />
+    <Compile Include="Assemble\Contexts\LoadingsContext.cs" />
+    <Compile Include="Assemble\Contexts\IRatingsContext.cs" />
+    <Compile Include="Assemble\Contexts\LoadingsContextExtensions.cs" />
+    <Compile Include="Assemble\Pipeline\MotorLoadingsCalculationPipeline.cs" />
+    <Compile Include="Assemble\Pipeline\PolicyConfigurationSavePipeline .cs" />
+    <Compile Include="Assemble\Pipeline\PolicyConfigurationLoadPipeline.cs" />
+    <Compile Include="Assemble\Pipeline\LoadingsValidationPipeline.cs" />
+    <Compile Include="Assemble\Helpers\ModelMappingHelpers.cs" />
+    <Compile Include="Controllers\UnderwritingCalculationsController.cs" />
+    <Compile Include="Processor\CalculatorFactory\BaseFactory.cs" />
+    <Compile Include="Interfaces\ICalculator.cs" />
+    <Compile Include="Processor\CalculatorFactory\BaseVersion\Interfaces\ICreditRelatedLoadingsCalculator.cs" />
+    <Compile Include="Processor\CalculatorFactory\BaseVersion\Interfaces\IGeneralUnderwritingLoadingsCalculator.cs" />
+    <Compile Include="Processor\CalculatorFactory\BaseVersion\Interfaces\IMotorLoadingsCalculator.cs" />
+    <Compile Include="Processor\CalculatorFactory\ILoadingsCalculatorFactory.cs" />
+    <Compile Include="Processor\CalculatorFactory\IRatingsCalculatorFactory.cs" />
+    <Compile Include="Processor\CalculatorFactory\LoadingsCalculatorFactory.cs" />
+    <Compile Include="Processor\CalculatorFactory\RatingsCalculatorFactoryInitialiser.cs" />
+    <Compile Include="Processor\CalculatorFactory\V1\Calculation\CreditRelatedFunctionSet.cs" />
+    <Compile Include="Processor\CalculatorFactory\V1\Calculation\GeneralUnderwritingLoadingsFunctionSet.cs" />
+    <Compile Include="Processor\CalculatorFactory\V1\Calculation\CoverAdditionFunctionSet.cs" />
+    <Compile Include="Processor\CalculatorFactory\V1\Calculation\MotorLoadingsFunctionSet.cs" />
+    <Compile Include="Processor\CalculatorFactory\V1\Common\CreditRelatedCalculator.cs" />
+    <Compile Include="Processor\CalculatorFactory\V1\Common\GeneralUnderwritingLoadingsCalculator.cs" />
+    <Compile Include="Processor\CalculatorFactory\V1\Common\MotorLoadingsCalculator.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\..\Common\Nucleotic.Common\Nucleotic.Common.csproj">
+      <Project>{37F84EE4-3BC8-41A9-8CA3-EB9A04C910B8}</Project>
+      <Name>Nucleotic.Common</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\DataContracts\Nucleotic.DataContracts.CalculationEngine\Nucleotic.DataContracts.CalculationEngine.csproj">
+      <Project>{BC62EBCE-E177-49A4-9865-AC7DA1D18CBB}</Project>
+      <Name>Nucleotic.DataContracts.CalculationEngine</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\Framework\Nucleotic.Framework.Engine\Nucleotic.Framework.Engine.csproj">
+      <Project>{C7CFF5B0-8D7A-45EF-983E-722B14148045}</Project>
+      <Name>Nucleotic.Framework.Engine</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\Framework\Nucleotic.Framework.Logging\Nucleotic.Framework.Logging.csproj">
+      <Project>{B6A3F064-D33C-40D2-AEF5-5E7581BB8D5E}</Project>
+      <Name>Nucleotic.Framework.Logging</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

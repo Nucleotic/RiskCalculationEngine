@@ -1,0 +1,385 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="Nucleotic.DataContracts.CalculationEngine.RatingsModels.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityType Name="BandValues">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="RuleTypeId" Type="int" Nullable="false" />
+    <Property Name="RuleAttributeId" Type="int" />
+    <Property Name="RuleExtensionId" Type="int" />
+    <Property Name="BandMinValue" Type="decimal" Precision="15" Scale="5" Nullable="false" />
+    <Property Name="BandMaxValue" Type="decimal" Precision="15" Scale="5" />
+    <Property Name="LoadingRate" Type="decimal" Precision="12" Scale="4" Nullable="false" />
+    <Property Name="Version" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="BrokerLoadings">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="BrokerId" Type="int" />
+    <Property Name="BrokerName" Type="varchar" MaxLength="100" Nullable="false" />
+    <Property Name="LoadingRateMotor" Type="decimal" Precision="7" Scale="2" Nullable="false" />
+    <Property Name="LoadingRateNonMotor" Type="decimal" Precision="7" Scale="2" Nullable="false" />
+    <Property Name="IncreasePercentageMotor" Type="decimal" Precision="7" Scale="2" Nullable="false" />
+    <Property Name="IncreasePercentageNonMotor" Type="decimal" Precision="7" Scale="2" Nullable="false" />
+    <Property Name="DiscretionaryDiscount" Type="decimal" Precision="7" Scale="2" Nullable="false" />
+    <Property Name="DateCreated" Type="datetime" Nullable="false" />
+    <Property Name="DateDeleted" Type="datetime" />
+    <Property Name="IsLatest" Type="bit" Nullable="false" />
+    <Property Name="IsActive" Type="bit" Nullable="false" />
+  </EntityType>
+  <EntityType Name="ClaimsHistoryLoadings">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="RuleTypeId" Type="int" />
+    <Property Name="ClaimPeriod" Type="int" Nullable="false" />
+    <Property Name="NumberOfClaims" Type="int" Nullable="false" />
+    <Property Name="LoadingRate" Type="decimal" Precision="7" Scale="2" Nullable="false" />
+    <Property Name="Version" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="CrestaZones">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="PostalCode" Type="varchar" MaxLength="4" Nullable="false" />
+    <Property Name="ZoneNumber" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="EngineConfiguration">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="EngineType" Type="varchar" MaxLength="100" />
+    <Property Name="ProductType" Type="varchar" MaxLength="20" />
+    <Property Name="RulesetVersion" Type="int" Nullable="false" />
+    <Property Name="DateCreated" Type="datetime" Nullable="false" />
+    <Property Name="BaseRate" Type="decimal" Precision="7" Scale="2" />
+    <Property Name="IsActive" Type="bit" Nullable="false" />
+  </EntityType>
+  <EntityType Name="PolicyRuleConfiguration">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="PolicyNo" Type="varchar" MaxLength="32" Nullable="false" />
+    <Property Name="RiskItemId" Type="bigint" Nullable="false" />
+    <Property Name="RulesVersion" Type="int" Nullable="false" />
+    <Property Name="BasicSumInsured" Type="decimal" Precision="18" Scale="2" Nullable="false" />
+    <Property Name="RiskItemCoverType" Type="varchar" MaxLength="30" Nullable="false" />
+    <Property Name="PostalCode" Type="varchar" MaxLength="5" />
+    <Property Name="BrokerId" Type="int" Nullable="false" />
+    <Property Name="ProductType" Type="varchar" MaxLength="20" />
+    <Property Name="BaseRate" Type="decimal" Precision="7" Scale="3" />
+    <Property Name="AdditionalExcess" Type="decimal" Precision="7" Scale="3" />
+    <Property Name="LoadedFactor" Type="decimal" Precision="18" Scale="10" />
+    <Property Name="CalculatedRate" Type="decimal" Precision="18" Scale="10" />
+    <Property Name="CalculatedAnnualPremium" Type="decimal" Precision="18" Scale="2" />
+    <Property Name="CalculatedMonthlyPremium" Type="decimal" Precision="10" Scale="2" />
+    <Property Name="DiscretionaryFloorAmount" Type="decimal" Precision="10" Scale="2" />
+    <Property Name="CallingContextId" Type="uniqueidentifier" />
+    <Property Name="DateCalculated" Type="datetime" Nullable="false" />
+    <Property Name="DeclinedReferred" Type="bit" Nullable="false" />
+  </EntityType>
+  <EntityType Name="PolicyRuleLoadings">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="uniqueidentifier" Nullable="false" />
+    <Property Name="PolicyRuleId" Type="int" Nullable="false" />
+    <Property Name="LoadingName" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="LoadingValue" Type="decimal" Precision="7" Scale="3" Nullable="false" />
+    <Property Name="IsAggregable" Type="bit" Nullable="false" />
+  </EntityType>
+  <EntityType Name="PolicyRuleParameters">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="uniqueidentifier" Nullable="false" />
+    <Property Name="PolicyRuleId" Type="int" Nullable="false" />
+    <Property Name="ParameterName" Type="varchar" MaxLength="500" Nullable="false" />
+    <Property Name="ParameterValue" Type="varchar" MaxLength="1000" />
+  </EntityType>
+  <EntityType Name="RuleType">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="EngineConfigurationId" Type="int" />
+    <Property Name="RuleName" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="IsEnabled" Type="bit" Nullable="false" />
+    <Property Name="DateCreated" Type="datetime" Nullable="false" />
+    <Property Name="DateDeleted" Type="datetime" />
+    <Property Name="EffectiveFrom" Type="datetime" Nullable="false" />
+    <Property Name="EffectiveTo" Type="datetime" />
+    <Property Name="Version" Type="int" Nullable="false" />
+    <Property Name="CriteriaSource" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="CalculationType" Type="varchar" MaxLength="30" Nullable="false" />
+  </EntityType>
+  <EntityType Name="RuleTypeAttributes">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="RuleTypeId" Type="int" Nullable="false" />
+    <Property Name="DateCreated" Type="datetime" Nullable="false" />
+    <Property Name="EffectiveFrom" Type="datetime" Nullable="false" />
+    <Property Name="EffectiveTo" Type="datetime" />
+    <Property Name="AttributeKey" Type="nvarchar" MaxLength="200" Nullable="false" />
+    <Property Name="AttributeValue" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="Version" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="RuleTypeExtension">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="RuleTypeId" Type="int" Nullable="false" />
+    <Property Name="RuleAttributeId" Type="int" />
+    <Property Name="Criteria" Type="varchar" MaxLength="200" Nullable="false" />
+    <Property Name="CriteriaFactors" Type="decimal" Precision="12" Scale="4" Nullable="false" />
+  </EntityType>
+  <EntityType Name="UnderwritingExclusions">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="RuleTypeId" Type="int" Nullable="false" />
+    <Property Name="RuleTypeAttributeId" Type="int" />
+    <Property Name="Version" Type="int" Nullable="false" />
+    <Property Name="MemberName" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="Operator" Type="varchar" MaxLength="20" Nullable="false" />
+    <Property Name="ExclusionValue" Type="varchar" MaxLength="20" Nullable="false" />
+    <Property Name="Reason" Type="varchar" MaxLength="300" />
+  </EntityType>
+  <EntityType Name="VehicleLoadings">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="VehicleMake" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="VehicleModel" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="VehicleType" Type="varchar" MaxLength="50" />
+    <Property Name="IsHighPerformance" Type="bit" />
+    <Property Name="LoadingRate" Type="decimal" Precision="7" Scale="2" Nullable="false" />
+    <Property Name="WaiverRate" Type="decimal" Precision="7" Scale="2" />
+    <Property Name="DateCreated" Type="datetime" Nullable="false" />
+    <Property Name="DateDeleted" Type="datetime" />
+    <Property Name="IsLatest" Type="bit" Nullable="false" />
+  </EntityType>
+  <Association Name="FK_BandValues_Extensions">
+    <End Role="RuleTypeExtension" Type="Self.RuleTypeExtension" Multiplicity="0..1" />
+    <End Role="BandValues" Type="Self.BandValues" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="RuleTypeExtension">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="BandValues">
+        <PropertyRef Name="RuleExtensionId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_BandValues_RuleAttribute">
+    <End Role="RuleTypeAttributes" Type="Self.RuleTypeAttributes" Multiplicity="0..1" />
+    <End Role="BandValues" Type="Self.BandValues" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="RuleTypeAttributes">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="BandValues">
+        <PropertyRef Name="RuleAttributeId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_BandValues_RuleType">
+    <End Role="RuleType" Type="Self.RuleType" Multiplicity="1" />
+    <End Role="BandValues" Type="Self.BandValues" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="RuleType">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="BandValues">
+        <PropertyRef Name="RuleTypeId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_ClaimsHistoryLoadings_RuleType">
+    <End Role="RuleType" Type="Self.RuleType" Multiplicity="0..1" />
+    <End Role="ClaimsHistoryLoadings" Type="Self.ClaimsHistoryLoadings" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="RuleType">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="ClaimsHistoryLoadings">
+        <PropertyRef Name="RuleTypeId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_PolicyRuleLoadings_PolicyRuleConfiguration">
+    <End Role="PolicyRuleConfiguration" Type="Self.PolicyRuleConfiguration" Multiplicity="1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Role="PolicyRuleLoadings" Type="Self.PolicyRuleLoadings" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="PolicyRuleConfiguration">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="PolicyRuleLoadings">
+        <PropertyRef Name="PolicyRuleId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_PolicyRuleParameters_PolicyRuleConfiguration">
+    <End Role="PolicyRuleConfiguration" Type="Self.PolicyRuleConfiguration" Multiplicity="1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Role="PolicyRuleParameters" Type="Self.PolicyRuleParameters" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="PolicyRuleConfiguration">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="PolicyRuleParameters">
+        <PropertyRef Name="PolicyRuleId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_RuleType_EngineConfiguration">
+    <End Role="EngineConfiguration" Type="Self.EngineConfiguration" Multiplicity="0..1" />
+    <End Role="RuleType" Type="Self.RuleType" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="EngineConfiguration">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="RuleType">
+        <PropertyRef Name="EngineConfigurationId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_RuleTypeAttributes_RuleType">
+    <End Role="RuleType" Type="Self.RuleType" Multiplicity="1" />
+    <End Role="RuleTypeAttributes" Type="Self.RuleTypeAttributes" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="RuleType">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="RuleTypeAttributes">
+        <PropertyRef Name="RuleTypeId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_RuleTypeExtension_RuleTypeAttributes">
+    <End Role="RuleTypeAttributes" Type="Self.RuleTypeAttributes" Multiplicity="0..1" />
+    <End Role="RuleTypeExtension" Type="Self.RuleTypeExtension" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="RuleTypeAttributes">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="RuleTypeExtension">
+        <PropertyRef Name="RuleAttributeId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_RuleTypeExtension_RuleTypeExtension">
+    <End Role="RuleTypeExtension" Type="Self.RuleTypeExtension" Multiplicity="1" />
+    <End Role="RuleTypeExtension1" Type="Self.RuleTypeExtension" Multiplicity="0..1" />
+    <ReferentialConstraint>
+      <Principal Role="RuleTypeExtension">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="RuleTypeExtension1">
+        <PropertyRef Name="Id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_UnderwritingExceptions_RuleType">
+    <End Role="RuleType" Type="Self.RuleType" Multiplicity="1" />
+    <End Role="UnderwritingExclusions" Type="Self.UnderwritingExclusions" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="RuleType">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="UnderwritingExclusions">
+        <PropertyRef Name="RuleTypeId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_UnderwritingExclusions_RuleTypeAttributes">
+    <End Role="RuleTypeAttributes" Type="Self.RuleTypeAttributes" Multiplicity="0..1" />
+    <End Role="UnderwritingExclusions" Type="Self.UnderwritingExclusions" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="RuleTypeAttributes">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="UnderwritingExclusions">
+        <PropertyRef Name="RuleTypeAttributeId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityContainer Name="NucleoticDataContractsCalculationEngineRatingsModelsStoreContainer">
+    <EntitySet Name="BandValues" EntityType="Self.BandValues" Schema="Ratings" store:Type="Tables" />
+    <EntitySet Name="BrokerLoadings" EntityType="Self.BrokerLoadings" Schema="Ratings" store:Type="Tables" />
+    <EntitySet Name="ClaimsHistoryLoadings" EntityType="Self.ClaimsHistoryLoadings" Schema="Ratings" store:Type="Tables" />
+    <EntitySet Name="CrestaZones" EntityType="Self.CrestaZones" Schema="Ratings" store:Type="Tables" />
+    <EntitySet Name="EngineConfiguration" EntityType="Self.EngineConfiguration" Schema="Ratings" store:Type="Tables" />
+    <EntitySet Name="PolicyRuleConfiguration" EntityType="Self.PolicyRuleConfiguration" Schema="Ratings" store:Type="Tables" />
+    <EntitySet Name="PolicyRuleLoadings" EntityType="Self.PolicyRuleLoadings" Schema="Ratings" store:Type="Tables" />
+    <EntitySet Name="PolicyRuleParameters" EntityType="Self.PolicyRuleParameters" Schema="Ratings" store:Type="Tables" />
+    <EntitySet Name="RuleType" EntityType="Self.RuleType" Schema="Ratings" store:Type="Tables" />
+    <EntitySet Name="RuleTypeAttributes" EntityType="Self.RuleTypeAttributes" Schema="Ratings" store:Type="Tables" />
+    <EntitySet Name="RuleTypeExtension" EntityType="Self.RuleTypeExtension" Schema="Ratings" store:Type="Tables" />
+    <EntitySet Name="UnderwritingExclusions" EntityType="Self.UnderwritingExclusions" Schema="Ratings" store:Type="Tables" />
+    <EntitySet Name="VehicleLoadings" EntityType="Self.VehicleLoadings" Schema="Ratings" store:Type="Tables" />
+    <AssociationSet Name="FK_BandValues_Extensions" Association="Self.FK_BandValues_Extensions">
+      <End Role="RuleTypeExtension" EntitySet="RuleTypeExtension" />
+      <End Role="BandValues" EntitySet="BandValues" />
+    </AssociationSet>
+    <AssociationSet Name="FK_BandValues_RuleAttribute" Association="Self.FK_BandValues_RuleAttribute">
+      <End Role="RuleTypeAttributes" EntitySet="RuleTypeAttributes" />
+      <End Role="BandValues" EntitySet="BandValues" />
+    </AssociationSet>
+    <AssociationSet Name="FK_BandValues_RuleType" Association="Self.FK_BandValues_RuleType">
+      <End Role="RuleType" EntitySet="RuleType" />
+      <End Role="BandValues" EntitySet="BandValues" />
+    </AssociationSet>
+    <AssociationSet Name="FK_ClaimsHistoryLoadings_RuleType" Association="Self.FK_ClaimsHistoryLoadings_RuleType">
+      <End Role="RuleType" EntitySet="RuleType" />
+      <End Role="ClaimsHistoryLoadings" EntitySet="ClaimsHistoryLoadings" />
+    </AssociationSet>
+    <AssociationSet Name="FK_PolicyRuleLoadings_PolicyRuleConfiguration" Association="Self.FK_PolicyRuleLoadings_PolicyRuleConfiguration">
+      <End Role="PolicyRuleConfiguration" EntitySet="PolicyRuleConfiguration" />
+      <End Role="PolicyRuleLoadings" EntitySet="PolicyRuleLoadings" />
+    </AssociationSet>
+    <AssociationSet Name="FK_PolicyRuleParameters_PolicyRuleConfiguration" Association="Self.FK_PolicyRuleParameters_PolicyRuleConfiguration">
+      <End Role="PolicyRuleConfiguration" EntitySet="PolicyRuleConfiguration" />
+      <End Role="PolicyRuleParameters" EntitySet="PolicyRuleParameters" />
+    </AssociationSet>
+    <AssociationSet Name="FK_RuleType_EngineConfiguration" Association="Self.FK_RuleType_EngineConfiguration">
+      <End Role="EngineConfiguration" EntitySet="EngineConfiguration" />
+      <End Role="RuleType" EntitySet="RuleType" />
+    </AssociationSet>
+    <AssociationSet Name="FK_RuleTypeAttributes_RuleType" Association="Self.FK_RuleTypeAttributes_RuleType">
+      <End Role="RuleType" EntitySet="RuleType" />
+      <End Role="RuleTypeAttributes" EntitySet="RuleTypeAttributes" />
+    </AssociationSet>
+    <AssociationSet Name="FK_RuleTypeExtension_RuleTypeAttributes" Association="Self.FK_RuleTypeExtension_RuleTypeAttributes">
+      <End Role="RuleTypeAttributes" EntitySet="RuleTypeAttributes" />
+      <End Role="RuleTypeExtension" EntitySet="RuleTypeExtension" />
+    </AssociationSet>
+    <AssociationSet Name="FK_RuleTypeExtension_RuleTypeExtension" Association="Self.FK_RuleTypeExtension_RuleTypeExtension">
+      <End Role="RuleTypeExtension" EntitySet="RuleTypeExtension" />
+      <End Role="RuleTypeExtension1" EntitySet="RuleTypeExtension" />
+    </AssociationSet>
+    <AssociationSet Name="FK_UnderwritingExceptions_RuleType" Association="Self.FK_UnderwritingExceptions_RuleType">
+      <End Role="RuleType" EntitySet="RuleType" />
+      <End Role="UnderwritingExclusions" EntitySet="UnderwritingExclusions" />
+    </AssociationSet>
+    <AssociationSet Name="FK_UnderwritingExclusions_RuleTypeAttributes" Association="Self.FK_UnderwritingExclusions_RuleTypeAttributes">
+      <End Role="RuleTypeAttributes" EntitySet="RuleTypeAttributes" />
+      <End Role="UnderwritingExclusions" EntitySet="UnderwritingExclusions" />
+    </AssociationSet>
+  </EntityContainer>
+</Schema>
